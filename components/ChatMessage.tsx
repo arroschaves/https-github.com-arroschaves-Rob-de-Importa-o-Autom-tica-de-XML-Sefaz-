@@ -25,12 +25,16 @@ export const ChatMessage: React.FC<ChatMessageProps> = ({ message }) => {
     </div>
   );
 
+  const formattedContent = message.content
+    .replace(/\n/g, '<br />')
+    .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+
 
   return (
     <div className={wrapperClasses}>
        {!isUser && <ModelAvatar />}
         <div className={bubbleClasses}>
-            <div className={contentClasses} dangerouslySetInnerHTML={{ __html: message.content.replace(/\n/g, '<br />') }} />
+            <div className={contentClasses} dangerouslySetInnerHTML={{ __html: formattedContent }} />
         </div>
        {isUser && <UserAvatar />}
     </div>
