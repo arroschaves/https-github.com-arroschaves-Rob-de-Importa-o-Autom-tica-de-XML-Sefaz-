@@ -1,0 +1,5 @@
+{
+  "name": "Gemini XML Import Bot",
+  "description": "A chatbot that answers questions about the Automated XML Import Robot (Sefaz), powered by Gemini.",
+  "requestFramePermissions": []
+}
